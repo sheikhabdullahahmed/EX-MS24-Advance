@@ -2,11 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Layout from './Layout.jsx';
-import Home from './screens/Home.jsx';
-import About from './screens/About.jsx';
-import Contact from './screens/Contact.jsx';
-import Services from './screens/Services.jsx';
+import Home from './Screens/Home.jsx';
+import About from './Screens/About.jsx';
+import Contact from './Screens/Contact.jsx';
+import Services from './Screens/Services.jsx';
 import PersistentDrawerLeft from './components/Dashboard.jsx';
 import Basic from './components/Basic.jsx';
 

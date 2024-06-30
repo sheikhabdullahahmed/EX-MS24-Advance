@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <PersistentDrawerLeft />,
     children: [
       {
-        path: '',
+        path: 'home',
         element: <Home />
       },
       {

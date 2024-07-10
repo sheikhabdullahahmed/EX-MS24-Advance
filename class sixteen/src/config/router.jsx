@@ -14,7 +14,7 @@ const router = createBrowserRouter([
       element: <Dashboard />  ,
     },
     {
-      path: "/details",
+      path: "/details/:adid",
       element: <Details />  ,
     },
 ]);

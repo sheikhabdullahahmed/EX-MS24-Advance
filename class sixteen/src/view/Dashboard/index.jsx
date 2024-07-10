@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
-export default function Dashboard () {
+
+export default  function Dashboard () {
     const navigate = useNavigate()
-    const [products, setproducts] = useState([])
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios('https://fakestoreapi.com/products/1')
+        axios('https://fakestoreapi.com/products/')
         .then((res) => {
+            setProducts(res.data)
             console.log(res.data);
         })
         .catch((error) => {
@@ -18,26 +20,27 @@ export default function Dashboard () {
     }, [])
 
     const gotodetails = (item) => {
-        navigate =  (`/details/${item.id}`)
-    }
+        navigate (`/detalis/${item.id}`)
+    } 
 
     return (
-    <div>
+        <>
         <h1>Dashboard</h1>
+        
         {products.map(item => {
-            return <div onClick={() => gotodetails(item)}
-            style={{border: '1px solid black', margin : 50 }}>
-                <img src={item.image} width="50" alt="" />
-                <h5>{item.titile}</h5>
+            return ( 
+                <div
+                 onClick={() => gotodetails(item)}
+                style={{backgroundColor: "lightcyan", width: "100"}}>
+                    <img src={item.image} alt="" />
+                    <h5>{item.title}</h5>
+                    <h5>{item.description}</h5>
 
-            </div>
+                </div>
+            )
+            
+            
         })}
-    </div>
-
+        </>
     )
-
-
-
-
-
 }

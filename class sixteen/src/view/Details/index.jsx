@@ -75,6 +75,7 @@ export default function Details() {
         <div className="card-body">
           <h2 className="card-title">{detail.id}</h2>
           <p>{detail.title}</p>
+          <p>$ {detail.price}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary">Buy Now</button>
           </div>

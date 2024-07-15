@@ -1,7 +1,4 @@
-import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
+import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import Dashboard from "../view/Dashboard";
 import Details from '../view/Detalis'
 
@@ -11,9 +8,13 @@ const router = createBrowserRouter([
       path: "/",
       element: <Dashboard />,
     },
+    {
+      path: "/deatils/:id",
+      element: <Details />,
+    },
   ]);
 
-const Apps = () => {
+const App = () => {
     return (
         <>        
         <RouterProvider router={router} />
@@ -22,5 +23,6 @@ const Apps = () => {
     )
 }
 
+export default App
 
-export default Apps
+

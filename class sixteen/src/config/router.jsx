@@ -28,6 +28,7 @@
 
 
 
+
 import Dashboard from "../view/Dashboard";
 import Details from "../view/Details";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"; 

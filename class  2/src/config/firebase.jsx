@@ -27,11 +27,9 @@ export function signup(email, password) {
 }
 
 export function login(email, password) {
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      alert("Login successful");
-    })
+   return signInWithEmailAndPassword(auth, email, password)
+     
+
     .catch((error) => {
       const errorMessage = error.message;
       alert(`Error: ${errorMessage}`);

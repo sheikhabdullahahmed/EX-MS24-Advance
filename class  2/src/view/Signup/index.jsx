@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signup } from "../../config/firebase"; // Adjust the path as necessary
+import { signup } from "../../config/firebase"; 
 
 const Signup = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const navigate = useNavigate();
 
   const handleSignup = () => {
     signup(email, password);
   };
 
-  const goToLogin = () => {
+  const goToLogin = () => {o  
+    alert("go to login")
     navigate("/login");
   };
 

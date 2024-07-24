@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { login } from "../../config/firebase";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
 
   const handleLogin = () => {
     login(email, password);

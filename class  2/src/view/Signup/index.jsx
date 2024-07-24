@@ -11,7 +11,7 @@ const Signup = () => {
     signup(email, password);
   };
 
-  const goToLogin = () => {o  
+  const goToLogin = () => {
     alert("go to login")
     navigate("/login");
   };

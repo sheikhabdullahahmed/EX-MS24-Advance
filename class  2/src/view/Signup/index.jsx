@@ -9,11 +9,7 @@ const Signup = () => {
 
   const handleSignup = () => {
     signup(email, password);
-  };
-
-  const goToLogin = () => {
-    alert("go to login")
-    navigate("/login");
+    navigate('/login')
   };
 
   return (
@@ -39,12 +35,6 @@ const Signup = () => {
           onClick={handleSignup}
         >
           Sign Up
-        </button>
-        <button
-          className="w-full h-12 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
-          onClick={goToLogin}
-        >
-          Go to Login
         </button>
       </div>
     </div>

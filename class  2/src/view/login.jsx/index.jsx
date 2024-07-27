@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { login } from "../../config/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  const navigate = useNavigate()
+
   const handleLogin = () => {
     login(email, password);
+    navigate('/add')
   };
 
   return (

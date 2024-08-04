@@ -1,8 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { collection, addDoc, getFirestore, getDocs, deleteDoc,doc, deleteAllPersistentCacheIndexes } from 'firebase/firestore';
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-
+import { addDoc,getFirestore, collection } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAUqJjcjYXVY33IeK-8N0OPNDz9YNOKAbQ",
@@ -18,7 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const storage = getStorage(app);
 
 
 export function signup (email, password) {
@@ -40,6 +37,12 @@ export function login (email, password) {
     });
 }
 
-// export async function addProduct () {
-//   const 
-// }
+export async function addProduct(product) {
+  const { title, description, price, category } = product;
+
+  // Optional: Create a reference for storage if you plan to store files
+  // const storageRef = ref(storage, "data/");
+  // Adding the product to the Firestore collection named "data"
+  
+  return addDoc(collection(db, "data"), { title, description, price, category });
+}

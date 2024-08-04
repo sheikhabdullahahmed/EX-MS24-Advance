@@ -5,6 +5,7 @@ import {
 import Signup from './view/Signup'
 import  Login  from "./view/Login";
 import Adddata from './view/Adddata'
+import Render from './view/Render'
 
 
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/add",
     element: <Adddata />,
+  },
+  {
+    path: "/render",
+    element: <Render />,
   },
 ]);
 

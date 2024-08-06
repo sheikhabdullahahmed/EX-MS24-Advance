@@ -1,9 +1,17 @@
-import React from 'react'
+import { persistor, store } from "./store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-function App() {
+
+function App () {
   return (
-    <div>App</div>
+    <Provider store={store}>
+      <PersistGate loading= {null} persistor={persistor}>
+    <>
+    <h1>Todo</h1>
+    </>
+    </PersistGate>
+    </Provider>
+    
   )
 }
-
-export default App

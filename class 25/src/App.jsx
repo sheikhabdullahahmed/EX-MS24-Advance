@@ -1,15 +1,15 @@
 
 import React from 'react'
+import { useState } from 'react'
 
 function App() {
+
+  const [data, setdata] =  useState([])
   return (
-    <div>App</div>
+    <div>
+      console.log(data)
+      setdata(data)
+
+    </div>
   )
 }
-
-export default App
-const obj = {
-  name : "Sheikh"
-}
-obj.name  = "Abdullah"
-console.log(obj.name)

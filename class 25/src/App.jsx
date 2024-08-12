@@ -1,15 +1,10 @@
+import  './App.css'
+import Home from './Components/home'
 
-import React from 'react'
-import { useState } from 'react'
-
-function App() {
-
-  const [data, setdata] =  useState([])
+export default function App() {
   return (
-    <div>
-      console.log(data)
-      setdata(data)
-
-    </div>
+    <div className='App'>
+      <Home/>
+      </div>
   )
 }

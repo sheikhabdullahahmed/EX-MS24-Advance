@@ -20,18 +20,13 @@
     
 // ]);
 
-
-// export default function Router () {
-  
-//    return <RouterProvider router={router} />
-// }
-
-
-
-
 import Dashboard from "../view/Dashboard";
 import Details from "../view/Details";
-import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+import Navebar from "../Components/Navebar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { store, persistor } from "../store"; // Fixed typo here
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 const routes = createBrowserRouter([
   {
@@ -44,12 +39,13 @@ const routes = createBrowserRouter([
   },
 ]);
 
-function App() {
+export default function App() {
   return (
-    <>
-      <RouterProvider router={routes} />
-    </>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={routes} />
+        <Navebar />
+      </PersistGate>
+    </Provider>
   );
 }
-
-export default App;

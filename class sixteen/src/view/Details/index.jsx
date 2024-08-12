@@ -45,8 +45,6 @@
 //  }
 
 
-
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -56,7 +54,7 @@ export default function Details() {
   const { productId } = useParams();
 
   useEffect(() => {
-    axios(`https://fakestoreapi.com/products/${productId}`)
+    axios(`https://dummyjson.com/recipes/${productId}`)
       .then((res) => {
         setDetail(res.data);
         console.log(res.data);
@@ -64,7 +62,7 @@ export default function Details() {
       .catch((error) => {
         console.log('error', error);
       });
-  }, [productId]);
+  }, [productId]); 
 
   return (
     <div>
@@ -73,8 +71,7 @@ export default function Details() {
           <img src={detail.image} alt={detail.title} />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{detail.id}</h2>
-          <p>{detail.title}</p>
+          <h2 className="card-title">{detail.title}</h2>
           <p>$ {detail.price}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary">Buy Now</button>
@@ -84,16 +81,3 @@ export default function Details() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

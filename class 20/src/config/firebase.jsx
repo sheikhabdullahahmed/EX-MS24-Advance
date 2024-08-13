@@ -33,7 +33,5 @@ function signin () {
 
 
 async function addproduct (product) {
-  const {title, description, price, image} = product
-
-  const 
+  const {title, description, price, image} = product;
 }
